@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import supabase from "@/utils/supabase";
-import LogoutButton from "../auth/logout";
+import LogoutButton from "../../components/logout";
 import MovieList from "../../components/movie_card";
 
 const Dashboard = () => {
@@ -18,8 +18,9 @@ const Dashboard = () => {
   if (user) {
     return (
       <>
+      <div className="grid justify-items-end p-5 "><LogoutButton/></div>
+      <div className="font-bold text-7xl text-center">Popular Movies</div>
         <MovieList/>
-        <LogoutButton />
       </>
     );
   }

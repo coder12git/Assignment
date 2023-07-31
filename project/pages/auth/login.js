@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import supabase from '../../utils/supabase';
+import Head from 'next/head';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -22,25 +23,61 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <input
-        type="email"
-        className='text-gray-500'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <br/>
-      <input
-        type="password"
-        className='text-gray-500'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button onClick={handleLogin}>Login</button>
+    <>
+      <Head>
+        <title>
+        JET PROTOCOL | LOGIN
+        </title>
+      </Head>
+      <div className="flex flex-col place-items-center mt-20 pt-20">
+      <div className="pt-5 pb-5 text-2xl font-semibold">Please Login To Continue</div>
+      <div className="border-8 border-white rounded-lg p-20">
+      <div className="mb-6">
+        <label
+          className="block stroke-red-bg-btn  text-sm font-bold mb-2"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          cols="40"
+          rows="5"
+          id="email"
+          type="email"
+          placeholder="Enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block stroke-red-bg-btn  text-sm font-bold mb-2"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        ></input>
+      </div>
+      <br></br>
+      <div className="flex flex-col place-items-center">
+      <button
+        onClick={handleLogin}
+        className="font-bold w-full  bg-green-900  text-white rounded p-2 hover:bg-green-500"
+      >
+        Login
+      </button>
+     </div>
+     </div>
     </div>
+    </>
   );
 };
 
