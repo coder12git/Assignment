@@ -1,7 +1,31 @@
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import supabase from "@/utils/supabase";
+import LogoutButton from "../auth/logout";
+import MovieList from "../../components/movie_card";
 
-export default function dashboard () {
+const Dashboard = () => {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    async function fetchUserData() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      setUser(user);
+    }
+
+    fetchUserData();
+  }, []);
+  if (user) {
     return (
-        <h1>Dashboard</h1>
-    )
-}
+      <>
+        <MovieList/>
+        <LogoutButton />
+      </>
+    );
+  }
+  return (
+    <h1>Please Login first</h1>
+  )
+};
+
+export default Dashboard;
