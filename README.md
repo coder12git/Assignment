@@ -1,5 +1,7 @@
 # Assignment
 
+<a href="https://www.loom.com/share/1cfc7eb4f118451c97a39a2ae00c90e2?sid=942433d8-26f7-443a-91f5-2c0c2f48e2bd">Demo Video</a>
+
 ## Important Links
 
 - To access the **login page** click on **launch app** button on home page or go to ``/auth/login``
