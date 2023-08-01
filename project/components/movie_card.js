@@ -23,7 +23,10 @@ const MovieList = () => {
     <div>
       <div className="p-20 align-center justify-center grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {movies.map((movie) => (
-          <div key={movie.id} className="max-w-sm bg-white border border-white border-8 p-3 rounded-lg dark:bg-gray-800">
+          <div
+            key={movie.id}
+            className="max-w-sm bg-white border border-white border-8 p-3 rounded-lg dark:bg-gray-800"
+          >
             <a href="#">
               <img
                 className="rounded-t-lg"

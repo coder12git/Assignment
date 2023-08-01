@@ -18,15 +18,15 @@ const Dashboard = () => {
   if (user) {
     return (
       <>
-      <div className="grid justify-items-end p-5 "><LogoutButton/></div>
-      <div className="font-bold text-7xl text-center">Popular Movies</div>
-        <MovieList/>
+        <div className="grid justify-items-end p-5 ">
+          <LogoutButton />
+        </div>
+        <div className="font-bold text-7xl text-center">Popular Movies</div>
+        <MovieList />
       </>
     );
   }
-  return (
-    <h1>Please Login first</h1>
-  )
+  return <h1>Please Login first</h1>;
 };
 
 export default Dashboard;

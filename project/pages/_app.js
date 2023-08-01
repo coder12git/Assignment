@@ -1,10 +1,10 @@
-import '@/styles/globals.css'
-import { NextSeo } from 'next-seo'
+import "@/styles/globals.css";
+import { NextSeo } from "next-seo";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-        <NextSeo
+      <NextSeo
         title="JET PROTOCOL"
         titleTemplate="%s - Next Generation DeFi Governance"
         description="Experience open source, transparent, and efficient borrowing and lending on Solana with Jet Protocol."
@@ -31,5 +31,5 @@ export default function App({ Component, pageProps }) {
       />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
